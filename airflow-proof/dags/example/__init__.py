@@ -22,7 +22,7 @@ with DAG(dag_id='example_id', default_args=dag_args, schedule_interval=None, con
 
     docker_operator = DockerOperator(task_id='docker_1',
                                      image='node/jsservice:v1',
-                                     command=['sh', 'run.sh'],
+                                     command=['node', 'index.js'],
                                      auto_remove=True,
                                      volumes=[
                                          '/tmp/airflow/data:/data'

@@ -10,22 +10,19 @@ class DataManager {
     }
 }
 
-async function run() {
+function run() {
     const dataManager = new DataManager('Test')
     console.log('running')
     return dataManager.getName();
 }
 
-function runApi() {
-    run().then(res => console.log(res));
-}
-
 module.exports = {
-    runApi,
     run
 };
 
-// runApi();
+const value = run();
+console.log({result: value});
+return {result: value};
 
 // return runApi();
 // run().then(res => console.log('script success')).catch(err => console.log(err));
